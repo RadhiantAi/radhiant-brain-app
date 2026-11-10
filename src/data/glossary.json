@@ -1,0 +1,77 @@
+{
+  "sections": [
+    {
+      "name": "Common abbreviations",
+      "entries": [
+        {
+          "term": "RDISA",
+          "meaning": "Radhiant Diagnostic Imaging SA."
+        },
+        {
+          "term": "L10",
+          "meaning": "Level 10 meeting."
+        },
+        {
+          "term": "IDS",
+          "meaning": "Identify, Discuss, Solve."
+        },
+        {
+          "term": "MOR / QOR / AOR",
+          "meaning": "Monthly / Quarterly / Annual Operating Review."
+        },
+        {
+          "term": "BI-RADS",
+          "meaning": "Breast Imaging Reporting and Data System."
+        },
+        {
+          "term": "SAST",
+          "meaning": "South African Standard Time."
+        },
+        {
+          "term": "POPIA",
+          "meaning": "Protection of Personal Information Act."
+        },
+        {
+          "term": "HPCSA",
+          "meaning": "Health Professions Council of South Africa."
+        },
+        {
+          "term": "SAHPRA",
+          "meaning": "South African Health Products Regulatory Authority."
+        },
+        {
+          "term": "BHF",
+          "meaning": "Board of Healthcare Funders."
+        },
+        {
+          "term": "PMB",
+          "meaning": "Prescribed Minimum Benefits."
+        },
+        {
+          "term": "DSP",
+          "meaning": "Designated Service Provider."
+        },
+        {
+          "term": "B-BBEE",
+          "meaning": "Broad-Based Black Economic Empowerment."
+        },
+        {
+          "term": "NPS",
+          "meaning": "Net Promoter Score."
+        },
+        {
+          "term": "SLA",
+          "meaning": "Service Level Agreement."
+        },
+        {
+          "term": "ESD",
+          "meaning": "Enterprise and Supplier Development."
+        },
+        {
+          "term": "3HAG",
+          "meaning": "Three-year Highly Achievable Goal."
+        }
+      ]
+    }
+  ]
+}

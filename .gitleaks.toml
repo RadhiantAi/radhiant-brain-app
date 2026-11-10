@@ -1,0 +1,58 @@
+# gitleaks configuration.
+#
+# The CI job scans full history (`gitleaks git .`), so anything ever committed
+# is in scope, not just the current tree. The default rule set found nothing in
+# this repo's history; the rule below is the repo-specific one, because a
+# Radhiant Brain passcode is not shaped like a provider API key and the default
+# rules would not recognise one.
+#
+# Allowlist entries use `regexTarget = "line"`, because the default target is the
+# captured secret alone, which cannot tell a documented placeholder apart from a
+# real value.
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "radhiant-brain-passcode-env"
+description = "A Radhiant Brain passcode or session secret assigned a literal value"
+regex = '''RB_(SESSION_SECRET|TEAM_PASSCODE|LEADERSHIP_PASSCODE|CEO_PASSCODE)\s*=\s*['"]?[^\s'"$#][^\s'"]{7,}'''
+tags = ["radhiant", "credential"]
+
+  [[rules.allowlists]]
+  description = "Documented placeholders and obviously-fake values, matched on the whole line"
+  regexTarget = "line"
+  regexes = [
+    # .env.example ships deliberately visible placeholders, e.g.
+    # RB_CEO_PASSCODE=PLACEHOLDER_CEO_PASSCODE. A real value on one of those
+    # lines still trips the rule, which is the point of matching on PLACEHOLDER
+    # rather than allowlisting the file.
+    '''RB_[A-Z_]+\s*=\s*['"]?PLACEHOLDER''',
+    '''RB_[A-Z_]+\s*=\s*['"]?(YOUR|REPLACE|CHANGE|SET)_''',
+    # Build-only values used in documentation and local verification commands.
+    '''RB_[A-Z_]+\s*=\s*['"]?buildonly-''',
+    # Documentation and code referring to the variable names, not to values.
+    '''RB_[A-Z_]+\s*=\s*\$\{?[A-Z_]''',
+  ]
+
+  [[rules.allowlists]]
+  description = "Fresh random test-key expression, never a literal credential"
+  regexTarget = "match"
+  regexes = [
+    '''^RB_SESSION_SECRET\s*=\s*randomBytes\(32\)\.toString\($''',
+  ]
+
+[allowlist]
+description = "Known-burned dev defaults from pre-remediation history"
+regexTarget = "line"
+regexes = [
+  # Dev defaults removed by commit 0837ead. GO-LIVE.md carries a standing ROTATE
+  # instruction saying these strings are burned and may never be used in any
+  # environment. Allowlisted so the history scan reports genuinely new leaks
+  # rather than re-reporting a known, already-actioned one on every run.
+  '''radhiant-brain-dev-secret-not-for-production''',
+  '''radhiant-(team|leadership|ceo)['"]''',
+]
+paths = [
+  '''package-lock\.json''',
+]

@@ -1,0 +1,98 @@
+{
+  "sections": [
+    {
+      "name": "Live operational systems",
+      "systems": [
+        {
+          "name": "Radhiant Admin Portal",
+          "url": "https://portal-admin.rdisa.co.za",
+          "purpose": "Day-to-day RDISA operations: dashboard, patients, individual and corporate calendars, truck trip approval, appointment/performance/NPS reports, patient forms, tickets, staff management, and the Company Dashboard (weekly scorecard, quarterly goals, to-dos, headlines).",
+          "owner": "Damon du Randt",
+          "status": "Live"
+        },
+        {
+          "name": "Investor Vault",
+          "url": "https://vault.radhiant.info",
+          "purpose": "NDA-gated investor data room with watermarked documents, 2FA and download audit logs. Papermark vault also runs at investors.rdisa.co.za.",
+          "owner": "Anith",
+          "status": "Live"
+        },
+        {
+          "name": "Patient Outreach",
+          "url": "https://outreach.radhiant.info",
+          "purpose": "Mammogram recall and patient re-engagement over SMS, WhatsApp and email, with POPIA opt-out tracking. Runs under the RDISA recall POPIA carve-out.",
+          "owner": "Damon du Randt",
+          "status": "Live (migrating to AWS)"
+        },
+        {
+          "name": "HubSpot CRM",
+          "url": "https://app.hubspot.com",
+          "purpose": "Sales CRM with the 12-stage pipeline. Linked from the Admin Portal CRM menu item.",
+          "owner": "Sales (Rebecca / Tammy)",
+          "status": "Live"
+        },
+        {
+          "name": "Microsoft 365",
+          "url": "https://portal.office.com",
+          "purpose": "Email (Outlook), calendars, SharePoint Working Folders (Company-Wide, Finance, Marketing and Sales, Operations, CEO-Office), Planner for tasks.",
+          "owner": "Damon du Randt",
+          "status": "Live"
+        },
+        {
+          "name": "Smartsheet",
+          "url": "https://app.smartsheet.com",
+          "purpose": "Project planning and tracking.",
+          "owner": "Operations",
+          "status": "Live"
+        },
+        {
+          "name": "Plaud",
+          "url": "https://plaud.ai",
+          "purpose": "Meeting transcription for L10s, Leadership Meetings and reviews.",
+          "owner": "Anith",
+          "status": "Live"
+        }
+      ]
+    },
+    {
+      "name": "Platforms in build",
+      "systems": [
+        {
+          "name": "Radhiant Hub",
+          "url": "https://hub.radhiant.cloud",
+          "purpose": "Internal operations and intelligence platform (v2.6.0). Pre-production.",
+          "owner": "Damon du Randt",
+          "status": "Pre-production"
+        },
+        {
+          "name": "RIS-PACS",
+          "url": "",
+          "purpose": "Multi-tenant radiology information system, imaging archive (Orthanc/OHIF), billing and medical-aid switch. Pre-staging; about 30 to 50 hours of engineering from production-ready.",
+          "owner": "Damon du Randt",
+          "status": "Pre-staging"
+        },
+        {
+          "name": "Radhiant CDS",
+          "url": "https://cds.radhiant.info",
+          "purpose": "Clinical decision support for diagnostic imaging referrals.",
+          "owner": "Anith",
+          "status": "In build"
+        },
+        {
+          "name": "Radhiant Life",
+          "url": "",
+          "purpose": "Executive health and performance platform with wearable sync.",
+          "owner": "Anith",
+          "status": "In build"
+        },
+        {
+          "name": "Radhiant Brain",
+          "url": "",
+          "purpose": "This app, plus the governed company memory layer behind it (spec V0.6, 28 June 2026): registers, source lanes, POPIA gates and portal exports.",
+          "owner": "Anith",
+          "status": "In build"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  /* Radhiant palette (global-rules rule 27). Group-wide app: Tropical Night Blue + Group orange. */
+  --color-night: #2b2e4b;
+  --color-night-800: #383c5e;
+  --color-night-700: #474b73;
+  --color-night-100: #e6e7f0;
+  --color-night-50: #f4f4f9;
+  --color-ember: #ef5727;
+  --color-ember-600: #d84a1e;
+  --color-ember-50: #fdeee8;
+  --color-teal-brand: #229fa1;
+  --color-verse: #1d8a43;
+  --color-plum: #6b4f90;
+  --color-paper: #faf9f7;
+  --color-ink: #22243a;
+
+  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* Markdown content styling */
+.prose-rb {
+  line-height: 1.65;
+  font-size: 0.95rem;
+}
+.prose-rb h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-night);
+  margin: 1.5rem 0 0.75rem;
+}
+.prose-rb h2 {
+  font-size: 1.2rem;
+  font-weight: 650;
+  color: var(--color-night);
+  margin: 1.4rem 0 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--color-night-100);
+}
+.prose-rb h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-night);
+  margin: 1.1rem 0 0.4rem;
+}
+.prose-rb p {
+  margin: 0.6rem 0;
+}
+.prose-rb ul,
+.prose-rb ol {
+  margin: 0.6rem 0 0.6rem 1.4rem;
+}
+.prose-rb ul {
+  list-style: disc;
+}
+.prose-rb ol {
+  list-style: decimal;
+}
+.prose-rb li {
+  margin: 0.25rem 0;
+}
+.prose-rb a {
+  color: var(--color-ember-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-rb strong {
+  color: var(--color-night);
+}
+.prose-rb code {
+  background: var(--color-night-50);
+  border: 1px solid var(--color-night-100);
+  border-radius: 4px;
+  padding: 0.1rem 0.3rem;
+  font-size: 0.85em;
+}
+.prose-rb pre {
+  background: var(--color-night);
+  color: #eceef8;
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  margin: 0.8rem 0;
+}
+.prose-rb pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+.prose-rb table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8rem 0;
+  font-size: 0.88rem;
+}
+.prose-rb th {
+  text-align: left;
+  background: var(--color-night-50);
+  color: var(--color-night);
+  font-weight: 600;
+}
+.prose-rb th,
+.prose-rb td {
+  border: 1px solid var(--color-night-100);
+  padding: 0.45rem 0.6rem;
+  vertical-align: top;
+}
+.prose-rb blockquote {
+  border-left: 3px solid var(--color-ember);
+  padding-left: 0.9rem;
+  color: var(--color-night-700);
+  margin: 0.8rem 0;
+}
+.prose-rb hr {
+  border: none;
+  border-top: 1px solid var(--color-night-100);
+  margin: 1.2rem 0;
+}

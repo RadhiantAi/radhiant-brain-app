@@ -1,0 +1,31 @@
+# Dependency update automation. This app carries several hundred transitive npm
+# packages and nothing was watching them.
+#
+# Grouped weekly so the queue stays reviewable: one PR for patch and minor
+# bumps, separate PRs for majors (which need a look) and for GitHub Actions
+# (which are SHA-pinned, so Dependabot maintains the pin and its comment).
+
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Africa/Johannesburg
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Africa/Johannesburg
+    open-pull-requests-limit: 3

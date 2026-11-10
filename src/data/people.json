@@ -1,0 +1,195 @@
+{
+  "groups": [
+    {
+      "name": "Founder & CEO",
+      "people": [
+        {
+          "name": "Dr Anith Chacko",
+          "role": "Founder & CEO. Radiologist; personally reports all RDISA mammograms (BI-RADS).",
+          "location": "East London (HQ)",
+          "email": "anith@radhiant.com",
+          "note": ""
+        },
+        {
+          "name": "Abby Geiling",
+          "role": "Personal Assistant to Anith. Default scheduler for external meetings.",
+          "location": "Johannesburg",
+          "email": "abbyg@radhiant.com",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "name": "Fractional advisory leadership (Wednesday Leadership Meeting)",
+      "people": [
+        {
+          "name": "Kimberly McKnight (Kim)",
+          "role": "Fractional COO. Manages the five operational heads; leads the team accountability reset.",
+          "location": "Louisiana, USA",
+          "email": "",
+          "note": ""
+        },
+        {
+          "name": "Elsabe Tromp",
+          "role": "Fractional CFO (Daldig).",
+          "location": "Cape Town",
+          "email": "",
+          "note": "Lubabalo Swana has also acted as interim fractional CFO; confirm the current arrangement."
+        },
+        {
+          "name": "Jen Coetzee",
+          "role": "Fractional CMO (Humanoid). Oversees the SaleMate and Drivon partnerships.",
+          "location": "Cape Town",
+          "email": "",
+          "note": ""
+        },
+        {
+          "name": "Grant Webster",
+          "role": "Strategic advisor (Gralen). Deeply involved mentor on operations and capital.",
+          "location": "Cape Town",
+          "email": "",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "name": "Operational heads (Monday L10)",
+      "people": [
+        {
+          "name": "Samantha (Sam) le Roux",
+          "role": "Head of Admin: accounts payable, payment runs, scheduling, HPCSA compliance, policy write-ups.",
+          "location": "East London",
+          "email": "",
+          "note": ""
+        },
+        {
+          "name": "Fatima Davids",
+          "role": "Head of Mammography: clinical operations, positioning protocols, equipment QA, radiographer credentials.",
+          "location": "Cape Town",
+          "email": "",
+          "note": ""
+        },
+        {
+          "name": "Irshad Haniff",
+          "role": "Head of Logistics: equipment, contract execution, drivers and fleet movement.",
+          "location": "Durban",
+          "email": "",
+          "note": ""
+        },
+        {
+          "name": "Damon du Randt",
+          "role": "Head of IT: admin portal, booking systems, trip approval, PACS credentials, device provisioning.",
+          "location": "East London",
+          "email": "",
+          "note": ""
+        },
+        {
+          "name": "Tamryn (Tammy) Gratz",
+          "role": "Senior Sales Representative. Reports to Kim; works with the SaleMate sales function.",
+          "location": "East London",
+          "email": "",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "name": "Team",
+      "people": [
+        {
+          "name": "Erryn-Larnelle Garnie",
+          "role": "Admin Assistant (under Sam).",
+          "location": "East London",
+          "email": "",
+          "note": ""
+        },
+        {
+          "name": "Gloria Munhangu",
+          "role": "Admin Assistant (under Sam).",
+          "location": "East London",
+          "email": "",
+          "note": ""
+        },
+        {
+          "name": "Vincent Langley",
+          "role": "IT second-in-command (under Damon).",
+          "location": "East London",
+          "email": "",
+          "note": ""
+        },
+        {
+          "name": "Tanya Hanekom",
+          "role": "Operations (North).",
+          "location": "",
+          "email": "",
+          "note": "Role listed in an earlier org snapshot; confirm current role and reporting line."
+        }
+      ]
+    },
+    {
+      "name": "Drivers (under Irshad)",
+      "people": [
+        { "name": "Welcome Eckersley", "role": "Head Driver, Rad 7.", "location": "East London (HQ)", "email": "", "note": "" },
+        { "name": "George Skosana", "role": "Driver, Rad 1.", "location": "Bronkhorstspruit", "email": "", "note": "" },
+        { "name": "Victor Muvhangu", "role": "Driver, Rad 2.", "location": "Johannesburg", "email": "", "note": "" },
+        { "name": "Yusuf Abrahams", "role": "Driver, Rad 3.", "location": "Cape Town", "email": "", "note": "" },
+        { "name": "Wiseman Dlamini", "role": "Driver, Rad 4.", "location": "Durban", "email": "", "note": "" },
+        { "name": "Peter Zulu", "role": "Driver, Rad 5.", "location": "Johannesburg", "email": "", "note": "" },
+        { "name": "Nande Gabada", "role": "Driver, Rad 6.", "location": "Johannesburg", "email": "", "note": "" }
+      ]
+    },
+    {
+      "name": "External partners & specialists",
+      "people": [
+        {
+          "name": "Rebecca Cameron",
+          "role": "SaleMate owner; fractional Head of Sales for Radhiant. L10 invitee.",
+          "location": "Cape Town",
+          "email": "",
+          "note": ""
+        },
+        {
+          "name": "Daniel Chalmers",
+          "role": "SaleMate sales rep placed inside Radhiant. Reports to Rebecca.",
+          "location": "Cape Town",
+          "email": "",
+          "note": ""
+        },
+        {
+          "name": "Johnny Sheridan",
+          "role": "SaleMate; joins the L10 as an invitee.",
+          "location": "",
+          "email": "",
+          "note": ""
+        },
+        {
+          "name": "Catherine Royden-Turner",
+          "role": "Drivon owner: lead generation and social media.",
+          "location": "Cape Town",
+          "email": "",
+          "note": ""
+        },
+        {
+          "name": "Lubabalo Swana",
+          "role": "Fractional CFO support (CA (SA), Registered Auditor; ex KPMG, Africa Vukani, Hannover Re). Funding readiness and investor narrative.",
+          "location": "",
+          "email": "",
+          "note": "Confirm current scope alongside Elsabe Tromp."
+        },
+        {
+          "name": "Greg Solomon",
+          "role": "Mentor; actively involved in partnership strategy and positioning.",
+          "location": "",
+          "email": "",
+          "note": ""
+        },
+        {
+          "name": "Mark Chapman",
+          "role": "UK expansion advisor. Ex Alliance Medical; pan-European imaging background with NHS networks.",
+          "location": "UK",
+          "email": "",
+          "note": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+name: CI
+
+# CI security baseline, copied from RadhiantAi/anith-hub (.github/workflows/ci.yml)
+# so the estate has one answer rather than five: gitleaks in history mode with a
+# checksum-verified binary, actions pinned to commit SHAs, a read-only default
+# token, and a timeout on every job.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  secret-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Install gitleaks
+        run: |
+          GITLEAKS_VERSION=8.30.1
+          GITLEAKS_SHA256=551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+          curl -sSfL \
+            "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" \
+            -o /tmp/gitleaks.tar.gz
+          echo "${GITLEAKS_SHA256}  /tmp/gitleaks.tar.gz" | sha256sum -c -
+          tar -xzf /tmp/gitleaks.tar.gz -C /tmp gitleaks
+          sudo mv /tmp/gitleaks /usr/local/bin/gitleaks
+
+      - name: Scan for secrets
+        # `git` mode scans full commit history (fetch-depth: 0 above), so a
+        # passcode committed and later removed is still caught, not just the
+        # tree. This repo's history did carry dev-default credentials.
+        run: gitleaks git . --redact --verbose
+
+      - name: Prove literal credentials still fail the scan
+        run: node scripts/test-secret-scan.mjs
+
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          # Matches the "engines" field and the deployment target, so the build
+          # is verified on the runtime it actually ships on.
+          node-version: "24"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        # No credentials are provided on purpose. The app fails closed at
+        # request time, not at build time, so a green build here is not a claim
+        # that any credential exists.
+        run: npm run build:app
+
+      - name: Test compiled HTTP flows with a local synthetic provider
+        run: npm run test:http
+
+      - name: Audit dependency tree
+        run: npm audit --audit-level=moderate
+
+  knowledge-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      # This remains red until owners approve a current governed knowledge pack.
+      # Default npm run build also runs this gate before creating a deployment.
+      - run: npm run validate:knowledge

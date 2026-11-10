@@ -1,0 +1,50 @@
+{
+  "name": "radhiant-brain",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Radhiant Brain: the one place Radhiant context lives. Internal knowledge assistant for the Radhiant team.",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "next dev -p 3040",
+    "build": "npm run validate:knowledge && npm run build:app",
+    "start": "next start -p 3040",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "validate:knowledge": "node scripts/validate-knowledge.mjs",
+    "test": "node --import tsx --test \"tests/**/*.test.ts\"",
+    "build:app": "next build",
+    "test:http": "node tests/http/chat-flow.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.119.0",
+    "gray-matter": "^4.0.3",
+    "minisearch": "^7.1.0",
+    "next": "^15.5.29",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.7",
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.29",
+    "tailwindcss": "^4.1.8",
+    "tsx": "^4.23.15",
+    "typescript": "^5.8.3"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "^8.5.26"
+    },
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "^11.0.5"
+    }
+  }
+}
